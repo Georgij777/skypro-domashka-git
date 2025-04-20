@@ -16,3 +16,14 @@ def mask_account_card(user_data: str) -> str | None:
         x[-1] = y
 
         return " ".join(x)
+
+
+def get_date(recipient_date: str) -> str:
+    """Эта функция возвращает дату в формате ДД.ММ.ГГГГ."""
+    x = recipient_date.split("-")
+    y = x[2].split("T")
+    day = y[0]
+    month = x[1]
+    year = x[0]
+    date = day, month, year
+    return f'ДД.ММ.ГГГГ ({day}.{month}.{year})'
