@@ -8,10 +8,10 @@ def mask_account_card(user_data: str) -> str | None:
         y = get_mask_account(x[-1])
         x[-1] = y
 
-
         return " ".join(x)
     elif len(x[-1]) != 20:
         from src.masks import get_mask_card_number
+
         y = get_mask_card_number(x[-1])
         x[-1] = y
 
@@ -26,4 +26,4 @@ def get_date(recipient_date: str) -> str:
     month = x[1]
     year = x[0]
     date = day, month, year
-    return f'ДД.ММ.ГГГГ ({day}.{month}.{year})'
+    return f"ДД.ММ.ГГГГ ({day}.{month}.{year})"
