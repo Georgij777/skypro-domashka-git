@@ -1,11 +1,11 @@
 from typing import Iterable
 
 
-def filter_by_state(users_data: Iterable[dict], state: str) -> list:
+def filter_by_state(users_data: Iterable[dict], state: str = "EXECUTED") -> list:
     """Эта функция возвращает данные по запросу: state == EXECUTED"""
     state_ex = []
     for data in users_data:
-        if data.get("state", 0) == "EXECUTED":
+        if data.get("state", 0) == state.upper():
             state_ex.append(data)
     return state_ex
 
