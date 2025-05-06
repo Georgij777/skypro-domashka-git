@@ -4,4 +4,5 @@ def test_filter_by_state(users_data, state):
     pass
 
 
-def test_
+def test_sort_by_date(users_data, descending=True):
+    pass
