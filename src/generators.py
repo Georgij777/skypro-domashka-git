@@ -11,7 +11,7 @@ def filter_by_currency(transactions: Iterable[dict], currency: str ='USD') -> Ge
 
 
 def transaction_descriptions(transactions: Iterable[dict]) -> Generator[None]:
-    """Принимает список транзакций и выводит из раздела 'description'"""
+    """Принимает список транзакций и выводит информацию из раздела 'description'"""
     for i in transactions:
         x = i['description']
         yield x
