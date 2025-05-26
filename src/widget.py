@@ -25,5 +25,4 @@ def get_date(recipient_date: str) -> str:
     day = y[0]
     month = x[1]
     year = x[0]
-    date = day, month, year
     return f"ДД.ММ.ГГГГ ({day}.{month}.{year})"

@@ -43,5 +43,9 @@ from src.generators import card_number_generator
 
 # for card_number in card_number_generator(12, 46):
 #     print(card_number)
-
-print(card_number_generator(12, 46))
+x = card_number_generator(12, 46)
+print(list(next(x)))
+print(list(next(x)))
+print(list(next(x)))
+print(list(next(x)))
+print(next(x))

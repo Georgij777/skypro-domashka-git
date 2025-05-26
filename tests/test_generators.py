@@ -1,6 +1,6 @@
+from typing import Generator, Iterable
+
 import src.generators
-from typing import Generator
-from typing import Iterable
 
 
 def test_filter_by_currency(coll_generators_1: Iterable[dict], currency: str = "USD") -> None:
@@ -36,7 +36,7 @@ def test_filter_by_currency(coll_generators_1: Iterable[dict], currency: str = "
     }
 
 
-def test_transaction_descriptions(coll_generators_1: Iterable[dict]) -> Generator[None]:
+def test_transaction_descriptions(coll_generators_1: Iterable[dict]) -> Generator[None, None, None]:
     generator_1 = src.generators.transaction_descriptions(coll_generators_1)
     assert next(generator_1) == "Перевод организации"
     assert next(generator_1) == "Перевод со счета на счет"
@@ -51,3 +51,8 @@ def test_card_number_generator(start: int = 1, end: int = 2) -> [list]:
         "0000 0000 0000 0005",
     ]
     assert list(src.generators.card_number_generator()) == ["0000 0000 0000 0001", "0000 0000 0000 0002"]
+
+    x = src.generators.card_number_generator(5, 7)
+    assert next(x) == "0000 0000 0000 0005"
+    assert next(x) == "0000 0000 0000 0006"
+    assert next(x) == "0000 0000 0000 0007"
