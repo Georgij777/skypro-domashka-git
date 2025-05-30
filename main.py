@@ -9,15 +9,43 @@
 # print(get_mask_card_number(card_number))
 # print(get_mask_account(account_number))
 
-from src.widget import mask_account_card
+# from src.widget import mask_account_card
+#
+# user_data: str = input("Введите данные карты или счёта")
+#
+#
+# print(mask_account_card(user_data))
+#
+#
+# from src.widget import get_date
+#
+#
+# print(get_date("2024-03-11T02:26:18.671407"))
 
-user_data: str = input("Введите данные карты или счёта")
+
+# from transactions import transactions
+# from src.generators import filter_by_currency
+#
+# y = filter_by_currency(transactions, 'USD')
+# print(next(y))
+# print(next(y))
+# print(next(y))
+# print(next(y))
+#
+# from src.generators import transaction_descriptions
+#
+# x = transaction_descriptions
 
 
-print(mask_account_card(user_data))
+
+from src.generators import card_number_generator
 
 
-from src.widget import get_date
-
-
-print(get_date("2024-03-11T02:26:18.671407"))
+# for card_number in card_number_generator(12, 46):
+#     print(card_number)
+x = card_number_generator(12, 46)
+print(list(next(x)))
+print(list(next(x)))
+print(list(next(x)))
+print(list(next(x)))
+print(next(x))
